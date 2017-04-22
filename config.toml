@@ -1,0 +1,4 @@
+baseURL = "http://london.k8s.uk"
+languageCode = "en-us"
+title = "London Kubernetes Meetup"
+theme = "hugo-tranquilpeak-theme"

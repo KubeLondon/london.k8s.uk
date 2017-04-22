@@ -1,0 +1,20 @@
+dependencies:
+  pre:
+    - bash ./ci-install-hugo.sh
+
+test:
+  override:
+    - echo "Please CircleCI, stop sending me emails."
+
+deployment:
+  master:
+    branch: hugo
+    commands:
+      - rm -rf public
+      - hugo
+      - mv public /tmp
+      - git checkout master
+      - cp -r /tmp/public/* .
+      - git add -A .
+      - git commit -m 'Site generation with hugo from CircleCI'
+      - git push origin master
