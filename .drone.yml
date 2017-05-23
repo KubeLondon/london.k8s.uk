@@ -1,0 +1,20 @@
+debug: true
+pipeline:
+  build:
+    image: golang:1.8
+    environment:
+    commands:
+      - curl -L -o /tmp/hugo.tar.gz https://github.com/spf13/hugo/releases/download/v0.20.7/hugo_0.20.7_Linux-64bit.tar.gz
+      - tar xvf /tmp/hugo.tar.gz -C /tmp/
+      - mv /tmp/hugo /usr/bin/hugo
+      - hugo -t hugo-tranquilpeak-theme -b https://london.k8s.uk
+
+  slack_success:
+    image: plugins/slack
+    channel: deploys
+    username: kubot
+    template: >
+      {{ build.author }} finished building {{ repo.owner }}/{{ repo.name }} ({{ build.branch }})
+    when:
+      status: success
+    secrets: [ slack_webhook]
