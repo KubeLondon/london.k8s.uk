@@ -26,7 +26,7 @@ pipeline:
     image: quay.io/ipedrazas/drone-helm:master-20c098e
     skip_tls_verify: true
     chart: ./chart/london-meetup
-    release: ${DRONE_BRANCH}-meetup
+    release: meetup-${DRONE_BRANCH}
     values: image.tag=${DRONE_BRANCH}-${DRONE_COMMIT_SHA:0:7}
     prefix: PROD
     secrets: [ prod_api_server, prod_kubernetes_token]
