@@ -1,0 +1,33 @@
+# Default values for blog.
+# This is a YAML-formatted file.
+# Declare variables to be passed into your templates.
+replicaCount: 1
+image:
+  repository: quay.io/ipedrazas/london-meetup
+  tag: latest
+  pullPolicy: Always
+service:
+  name: meetup
+  type: ClusterIP
+  externalPort: 80
+  internalPort: 80
+ingress:
+  enabled: true
+  # Used to create Ingress record (should used with service.type: ClusterIP).
+  host: london.k8s.uk
+  path: "/"
+  ssl:
+    enabled: false
+  
+resources:
+  limits:
+    cpu: 100m
+    memory: 128Mi
+  requests:
+    cpu: 100m
+    memory: 128Mi
+
+tls:
+  cert: xxx
+  key: xxx
+
