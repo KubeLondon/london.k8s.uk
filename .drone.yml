@@ -9,6 +9,30 @@ pipeline:
       - mv /tmp/hugo /usr/bin/hugo
       - hugo -t hugo-tranquilpeak-theme -b https://london.k8s.uk
 
+  docker-web:
+    environment:
+          - DOCKER_API_VERSION=1.24
+    image: plugins/docker:1.12
+    repo: quay.io/ipedrazas/london-meetup
+    tags:
+      - latest
+      - ${DRONE_BRANCH}-${DRONE_COMMIT_SHA:0:7}
+    registry: quay.io
+    email: "info@info.com"
+    debug: true
+    secrets: [ docker_username, docker_password ]
+
+  helm_deploy:
+    image: quay.io/ipedrazas/drone-helm:master-20c098e
+    skip_tls_verify: true
+    chart: ./chart/blog
+    release: ${DRONE_BRANCH}-blog
+    values: image.tag=${DRONE_BRANCH}-${DRONE_COMMIT_SHA:0:7}
+    prefix: PROD
+    secrets: [ prod_api_server, prod_kubernetes_token]
+    when:
+      branch: [master]
+
   slack_success:
     image: plugins/slack
     channel: deploys

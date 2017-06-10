@@ -1,3 +1,18 @@
 baseURL = "https://london.k8s.uk"
 languageCode = "en-us"
-title = "Kubernetes London Meetup"
+title = "KubeLondon"
+
+[params]
+description = "Kubernetes London Meetup"
+keywords = ["kubernetes", "meetup"]
+author = "Ivan Pedrazas"
+sharingicons = true
+
+
+[params.highlight]
+style = "github"
+languages = ["go", "dockerfile"]
+
+[[params.social]]
+url = "https://github.com/KubeLondon"
+fa_icon = "fa-github"
