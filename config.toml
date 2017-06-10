@@ -1,6 +1,7 @@
 baseURL = "https://london.k8s.uk"
 languageCode = "en-us"
 title = "KubeLondon"
+theme = "hucore"
 
 [params]
 description = "Kubernetes London Meetup"
