@@ -21,6 +21,8 @@ pipeline:
     email: "info@info.com"
     debug: true
     secrets: [ docker_username, docker_password ]
+    when:
+      branch: [master]
 
   helm_deploy:
     image: quay.io/ipedrazas/drone-helm:master-20c098e
