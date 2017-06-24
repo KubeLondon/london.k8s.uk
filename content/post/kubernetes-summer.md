@@ -2,7 +2,6 @@
 description = "POst about the Kubernetes summer meetup"
 categories = ["kubernetes"]
 tags = ["summer", "networking", "ci"]
-draft = true
 date = "2017-06-23T00:49:48+01:00"
 author = "Ivan Pedrazas"
 title = "Kubernetes Summer"
@@ -18,7 +17,10 @@ After that we will move to the next talk given by the one and only <drum rolls> 
 
 This Meetup would never happen without our wonderful sponsors. [Skills Matter](https://skillsmatter.com/) have kindly provided us with their excellent venue.
 
-Our best friends from [Jetstack](https://www.jetstack.io/), Kubernetes specialists based in London, will feed us before we head to the main room for the talks! <applause placeholder>. If you're looking into running Kubernetes in production you should definitely talk to Jetstack. They are quickly becoming the go-to experts in this space  So, do check their site and get in touch with them!
+Our friends from [Jetstack](https://www.jetstack.io/), Kubernetes specialists based in London, will feed us before we head to the main room for the talks! <applause placeholder>. If you're looking into running Kubernetes in production you should definitely talk to Jetstack. They are quickly becoming the go-to experts in this space  So, do check their site and get in touch with them!
+
+![alt text](/img/jetstack-logo.png)
+
 
 ## Program: 
 
