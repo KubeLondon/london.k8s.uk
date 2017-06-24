@@ -1,0 +1,12 @@
+.logocenter {
+    display: block;
+    margin: 0 auto;
+}
+
+.nav{
+    background-image: url('/img/london.png');
+}
+.title{
+    font-weight: bolder;
+    font-size: 30px;
+}
